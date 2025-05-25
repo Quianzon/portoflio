@@ -92,33 +92,6 @@ export default function Home() {
         </div>
       ),
     },
-    {
-      title: "Changelog",
-      content: (
-        <div>
-          <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Deployed 5 new components on Aceternity today
-          </p>
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Card grid component
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
-        </div>
-      ),
-    },
   ];
 
   return (
@@ -168,8 +141,8 @@ export default function Home() {
               seamless, responsive, and user-friendly applications.
             </p>
             <p className="text-gray-700 mb-4">
-              My journey in tech began with a degree in Computer Science, followed by 
-              hands-on experience at innovative startups and established tech companies.
+              My journey in tech began with a degree in Bachelor of Science in Information Technology, followed by 
+              hands-on experience at innovative startups.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">PHP Native</span>
@@ -204,14 +177,15 @@ export default function Home() {
                 <p className="text-gray-500">Project Image</p>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                <h3 className="text-xl font-semibold mb-2">DMSF Inventory System</h3>
                 <p className="text-gray-600 mb-4">
-                  A full-featured online store with payment processing, inventory management, and analytics dashboard.
+                  A comprehensive inventory management system for DMSF that tracks medical supplies, generates reports, and manages stock levels efficiently.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">React</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Node.js</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">MongoDB</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">PHP Native</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">MySQL</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">CSS</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Javascript</span>
                 </div>
                 <Link 
                   href="#" 
@@ -228,14 +202,15 @@ export default function Home() {
                 <p className="text-gray-500">Project Image</p>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Health & Fitness App</h3>
+                <h3 className="text-xl font-semibold mb-2">Karaoke System</h3>
                 <p className="text-gray-600 mb-4">
-                  A mobile application for tracking workouts, nutrition, and health metrics with personalized recommendations.
+                  A web-based karaoke system with song queuing, user management, and real-time lyrics display. Features include song search, and performance scoring.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">React Native</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Firebase</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">GraphQL</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">PHP Native</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">MySQL</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">CSS</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Javascript</span>
                 </div>
                 <Link 
                   href="#" 
@@ -252,14 +227,15 @@ export default function Home() {
                 <p className="text-gray-500">Project Image</p>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">AI Content Generator</h3>
+                <h3 className="text-xl font-semibold mb-2">Mortuary System</h3>
                 <p className="text-gray-600 mb-4">
-                  A web application that uses AI to generate blog posts, social media content, and marketing copy.
+                  A mortuary employee management system that handles staff records, work schedules, and employee information. Features include automated reporting of employee information.
                 </p>
                 <div className="flex gap-2 mb-4">
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Next.js</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">OpenAI API</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Tailwind CSS</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">PHP Native</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">MySQL</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">CSS</span>
+                  <span className="px-2 py-1 bg-gray-100 rounded text-xs">Javascript</span>
                 </div>
                 <Link 
                   href="#" 
@@ -286,7 +262,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold">Gladys Quianzon</h3>
-            <p className="text-gray-400">Full Stack Developer</p>
+            <p className="text-gray-400">Web Developer</p>
           </div>
           <div className="flex gap-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
