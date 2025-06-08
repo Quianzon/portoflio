@@ -36,7 +36,7 @@ export function BackgroundBeams({
   return (
     <div
       className={cn(
-        "h-full w-full overflow-hidden rounded-md bg-slate-950",
+        "h-full w-full overflow-hidden rounded-md bg-black",
         className
       )}
       ref={beamsRef}
