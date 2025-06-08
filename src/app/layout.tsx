@@ -5,15 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gladys Quianzon | Web Developer & QA Engineer",
-  description: "Professional portfolio of Gladys Quianzon, a skilled Web Developer and QA Engineer specializing in PHP, WordPress, and modern web technologies. View projects, experience, and certifications.",
-  keywords: ["Web Developer", "QA Engineer", "PHP Developer", "WordPress Developer", "Portfolio"],
-  authors: [{ name: "Gladys Quianzon" }],
-  openGraph: {
-    title: "Gladys Quianzon | Web Developer & QA Engineer",
-    description: "Professional portfolio showcasing web development and QA engineering expertise",
-    type: "website",
-  },
+  title: "Gladys Portfolio",
+  description: "A minimal and professional portfolio for a female developer",
 };
 
 export default function RootLayout({
@@ -22,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
