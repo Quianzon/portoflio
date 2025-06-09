@@ -5,8 +5,9 @@ import { Timeline } from "@/components/ui/timeline";
 import CertificateModal from "@/components/ui/certificate-modal";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import HeroParticles from "@/components/ui/hero-particles";
 
 export default function Home() {
   const [selectedCertificate, setSelectedCertificate] = useState<{
@@ -110,36 +111,13 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* Hero Section */}
-      <div className="relative w-full h-screen">
-        <BackgroundBeams className="w-full h-full">
-          <div className="flex flex-col items-center justify-center text-center p-4 space-y-8 z-10">
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-              <span className="text-primary-500">Hello, I'm</span> Gladys Quianzon
-            </h1>
-            <h2 className="text-xl md:text-2xl text-white max-w-2xl">
-              Web developer, QA, and PHP developer
-            </h2>
-            <div className="flex gap-4">
-              <Link 
-                  href="#timeline" 
-                  className="px-6 py-3 bg-transparent hover:bg-gray-300 text-white border border-gray-300 rounded-md transition-all"
-                >
-                  My Journey
-                </Link>
-              <Link 
-                href="#projects" 
-                className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-md transition-all"
-              >
-                View My Work
-              </Link>
-              <Link 
-                href="#certificates" 
-                className="px-6 py-3 bg-transparent hover:bg-gray-300 text-white border border-gray-300 rounded-md transition-all"
-              >
-                Certificates
-              </Link>
-            </div>
-          </div>
+      <div className="relative w-full h-screen bg-black overflow-hidden">
+        {/* Animated gradient background overlay */}
+        <div className="absolute inset-0 z-0 animate-gradient bg-[linear-gradient(270deg,_#0ea5e9,_#a78bfa,_#f472b6,_#0ea5e9)] bg-[length:200%_200%] opacity-60" />
+        {/* Animated floating particles */}
+        <HeroParticles className="absolute inset-0 z-10 pointer-events-none" />
+        <BackgroundBeams className="w-full h-full relative z-20">
+          <ParallaxHeroContent />
         </BackgroundBeams>
       </div>
 
@@ -368,5 +346,77 @@ export default function Home() {
         </div>
       </footer>
     </main>
+  );
+}
+
+// ParallaxHeroContent component
+function ParallaxHeroContent() {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const ref = useRef(null);
+
+  function handleMouseMove(e) {
+    const rect = ref.current.getBoundingClientRect();
+    setMouse({
+      x: e.clientX - rect.left - rect.width / 2,
+      y: e.clientY - rect.top - rect.height / 2,
+    });
+  }
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      className="flex flex-col items-center justify-center text-center p-4 space-y-8 z-20 h-full w-full select-none"
+      style={{ perspective: 1200 }}
+    >
+      <motion.h1
+        className="text-4xl md:text-6xl font-bold text-white tracking-tight"
+        style={{
+          x: mouse.x * 0.03,
+          y: mouse.y * 0.03,
+          scale: 1 + Math.abs(mouse.x + mouse.y) * 0.0001,
+        }}
+        transition={{ type: "spring", stiffness: 80, damping: 20 }}
+      >
+        <span className="text-primary-400">Hello, I'm</span> Gladys Quianzon
+      </motion.h1>
+      <motion.h2
+        className="text-xl md:text-2xl text-gray-300 max-w-2xl"
+        style={{
+          x: mouse.x * 0.02,
+          y: mouse.y * 0.02,
+        }}
+        transition={{ type: "spring", stiffness: 80, damping: 20 }}
+      >
+        Web developer, QA, and PHP developer
+      </motion.h2>
+      <motion.div
+        className="flex gap-4"
+        style={{
+          x: mouse.x * 0.01,
+          y: mouse.y * 0.01,
+        }}
+        transition={{ type: "spring", stiffness: 80, damping: 20 }}
+      >
+        <Link 
+          href="#timeline" 
+          className="px-6 py-3 bg-transparent hover:bg-gray-800 text-white border border-gray-600 rounded-md transition-all"
+        >
+          My Journey
+        </Link>
+        <Link 
+          href="#projects" 
+          className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-md transition-all"
+        >
+          View My Work
+        </Link>
+        <Link 
+          href="#certificates" 
+          className="px-6 py-3 bg-transparent hover:bg-gray-800 text-white border border-gray-600 rounded-md transition-all"
+        >
+          Certificates
+        </Link>
+      </motion.div>
+    </div>
   );
 }
