@@ -354,7 +354,7 @@ function ParallaxHeroContent() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const ref = useRef(null);
 
-  function handleMouseMove(e) {
+  function handleMouseMove(e: { clientX: number; clientY: number; }) {
     const rect = ref.current.getBoundingClientRect();
     setMouse({
       x: e.clientX - rect.left - rect.width / 2,
