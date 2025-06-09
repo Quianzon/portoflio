@@ -6,6 +6,7 @@ import CertificateModal from "@/components/ui/certificate-modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [selectedCertificate, setSelectedCertificate] = useState<{
@@ -45,6 +46,7 @@ export default function Home() {
             <img src="/timeline/2024-1.png" alt="2024 Capstone development 1" className="w-full h-40 md:h-60 rounded-lg object-cover shadow" />
             <img src="/timeline/2024-2.jpg" alt="2024 Capstone development 2" className="w-full h-40 md:h-60 rounded-lg object-cover shadow" />
             <img src="/timeline/2024-3.jpg" alt="2024 Capstone development 3" className="w-full h-40 md:h-60 rounded-lg object-cover shadow" />
+            <img src="/timeline/2024-4.jpg" alt="2024 Capstone development 3" className="w-full h-40 md:h-60 rounded-lg object-cover shadow" />
           </div>
         </div>
       ),
@@ -143,7 +145,13 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="w-full py-20 px-4 md:px-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0, y: 60, scale: 0.97, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="order-2 md:order-1">
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <p className="text-gray-700 mb-4">
@@ -162,14 +170,14 @@ export default function Home() {
               <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">MySQL</span>
             </div>
           </div>
-          <div className="order-1 md:order-2 relative h-120 w-full rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-gradient-to-r from-primary-500/30 to-purple-500/30">
+          <div className="order-1 md:order-2 relative h-150 w-full rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-gradient-to-r from-primary-500/30 to-purple-500/30">
             <img
               src="/myself.JPG"
               alt="Portrait of Gladys Quianzon in graduation attire"
               className="object-cover h-full w-full rounded-lg shadow-md border-4 border-white dark:border-neutral-900"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Timeline Section */}
@@ -179,7 +187,13 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="w-full py-20 px-4 md:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 60, scale: 0.97, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="text-3xl font-bold mb-12 text-center">My Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project Card 1 */}
@@ -272,12 +286,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Certificates Section */}
       <section id="certificates" className="w-full py-20 px-4 md:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 60, scale: 0.97, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="text-3xl font-bold mb-12 text-center">Certificates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((cert, index) => (
@@ -292,17 +312,18 @@ export default function Home() {
                     alt={cert.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 line-clamp-2">{cert.title}</h3>
                   <p className="text-gray-600 mb-2">Issued by: {cert.issuer}</p>
                   <p className="text-gray-500 text-sm">Completed: {cert.date}</p>
                 </div>
               </div>
             ))}
-          </div>
         </div>
+        </motion.div>
       </section>
 
       {selectedCertificate && (
