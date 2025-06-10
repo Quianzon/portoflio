@@ -113,12 +113,9 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative w-full h-screen bg-black overflow-hidden">
         {/* Animated gradient background overlay */}
-        <div className="absolute inset-0 z-0 animate-gradient bg-[linear-gradient(270deg,_#0ea5e9,_#a78bfa,_#f472b6,_#0ea5e9)] bg-[length:200%_200%] opacity-60" />
-        {/* Animated floating particles */}
-        <HeroParticles className="absolute inset-0 z-10 pointer-events-none" />
-        <BackgroundBeams className="w-full h-full relative z-20">
-          <ParallaxHeroContent />
-        </BackgroundBeams>
+        <div className="absolute inset-0 z-0" />
+        <HeroParticles />
+        <ParallaxHeroContent />
       </div>
 
       {/* About Section */}
@@ -147,6 +144,14 @@ export default function Home() {
               <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Python</span>
               <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">MySQL</span>
             </div>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-8 px-6 py-3 border-2 bg-primary-500 hover:bg-black hover:text-white text-black font-semibold rounded-md shadow transition-all"
+            >
+              View CV
+            </a>
           </div>
           <div className="order-1 md:order-2 relative h-150 w-full rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-gradient-to-r from-primary-500/30 to-purple-500/30">
             <img
@@ -160,6 +165,7 @@ export default function Home() {
 
       {/* Timeline Section */}
       <section id="timeline" className="w-full">
+        <HeroParticles />
         <Timeline data={timelineData} />
       </section>
 
