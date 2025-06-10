@@ -1,79 +1,20 @@
 "use client";
 
-import { useState } from 'react';
-
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
-
-  const handleChange = (e: { target: { id: any; value: any; }; }) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [id]: value
-    }));
-  };
-
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-          />
+    <div className="flex flex-col items-center justify-center gap-6 p-10 bg-white/80 border border-primary-100 rounded-2xl shadow-xl max-w-xl mx-auto">
+      <h2 className="text-3xl font-extrabold mb-2 text-primary-600 tracking-tight">Contact Information</h2>
+      <p className="text-gray-500 mb-4 text-center max-w-md">Feel free to reach out for collaboration, project inquiries, or just to connect!</p>
+      <div className="flex flex-col gap-4 w-full">
+        <div className="flex items-center gap-4 p-4 bg-primary-50 rounded-lg hover:bg-primary-100 transition">
+          <svg className="w-8 h-8 text-primary-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 8a6 6 0 00-12 0" /></svg>
+          <a href="mailto:quianzongladys@gmail.com" className="text-lg font-medium text-gray-800 hover:underline break-all">quianzongladys@gmail.com</a>
         </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-          />
+        <div className="flex items-center gap-4 p-4 bg-primary-50 rounded-lg hover:bg-primary-100 transition">
+          <svg className="w-8 h-8 text-primary-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.3 1.2a2 2 0 01-.45 1.95l-.7.7a16.001 16.001 0 006.586 6.586l.7-.7a2 2 0 011.95-.45l1.2.3A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.163 23 1 16.837 1 9V8a2 2 0 012-2z" /></svg>
+          <a href="tel:+639943205311" className="text-lg font-medium text-gray-800 hover:underline">+63 994 320 5311</a>
         </div>
       </div>
-      <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-        <input
-          type="text"
-          id="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-        />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-        <textarea
-          id="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-        ></textarea>
-      </div>
-      <button
-        type="submit"
-        className="w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-md transition-all"
-      >
-        Send Message
-      </button>
-    </form>
+    </div>
   );
 }
